@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css">
+  <title>Themis 1.0.0</title>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+</html>
+
+<body>
+<nav id="navbar">
+  <header>Themis 1.0.0 Document</header>
+  <ul>
+    <li><a class="nav-link" href="#HTML">Before start</a></li>
+    <li><a class="nav-link" href="#Basic_Page_Structure">Arguments and their intended usage</a></li>
+    <li><a class="nav-link" href="#Headings/Paragraphs">Package preparation procedure</a></li>
+    <li><a class="nav-link" href="#Links/Images">Create, add, and remove a repository</a></li>
+    <li><a class="nav-link" href="#Lists">Support</a></li>
+    <li><a class="nav-link" href="#Tables">Change log</a></li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="HTML">
+    <header>Before start</header>
+    <p>Themis is not a package manager, it uses local package managers on the basis of themis purpose
+        Instead of packaging simple builds separately for multiple platforms, you just need to unpack their dependencies.
+        It's a multi-purpose cross-script management tool that you just need to specify as variables (NOT first release
+        There is no version management system for.</p>
+    <h3>Requirements:</h3>
+    <p><code style="color:DodgerBlue;">bash, python3/pip3(opt), ruby/gem(opt), wget, curl, gzip/tar</code></p>
+    <h3>Installation:</h3>
+    <p><center><iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%7E%2524%2520git%2520clone%2520https%253A%252F%252Fgithub.com%252FByCh4n-Group%252Fthemis.git%2520%2526%2526%2520cd%2520themis%2520%2526%2526%2520sudo%2520make%2520install"
+        style="width: 900px; height: 204px; border:0; transform: scale(1); overflow:hidden;"
+        sandbox="allow-scripts allow-same-origin">
+    </iframe></center></p>
+  </section>
+  <hr>
+  <section class="main-section" id="Basic_Page_Structure">
+    <header>Arguments and their intended usage</header>
+    <ul id="basic-elements">
+      <li><code>--help, help, --yardım, yardım, -h</code></li>
+      <p>The help argument prints the arguments from the other tool and their intended use.</p>
+      <li><code>--makepackage, makepackage, --paketyap, paketyap, -mp</code></li>
+      <p>with the package argument, Packages the projects prepared according to <code>Package preparation procedure</code>.
+        Verifies the directory(s) you specify as parameter(s) first, if it conforms to the procedure, it compresses them with tar.gz(gzip)
+        and saves the command to the directory where you run it. The important thing is that the saved package does not have a "_" character in its name and the filename is contiguous.</p>
+      <center><iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=themis%2520--makepackage%2520%253Cdirectory%253E"
+        style="width: 487px; height: 204px; border:0; transform: scale(1); overflow:hidden;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe></center>
+        <li><code>--localinstall, localinstall, --lokalyükle, lokalyükle, -li</code></li>
+      <p>You can install themis package files that you compressed with the load locally argument, this argument must be run with root privileges, but themis does not have a package compilation system of its own, it detects the functions of the bash scripts and the procedure and installs your package(s) accordingly.</p>
+        <center><iframe
+            src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%7E%2524%2520sudo%2520themis%2520--localinstall%2520%253Cpackage%253E.tar.gz"
+            style="width: 538px; height: 204px; border:0; transform: scale(1); overflow:hidden;"
+            sandbox="allow-scripts allow-same-origin">
+        </iframe></center>
+      <li><code>--install, install,  --yükle, yükle, -i</code></li>
+      <p>The install argument should be used with root rights. It basically uses the functions of the local install. It works with catalog logic. The indexes of your repositories are located in the<code>/usr/share/themis/index.sh</code> 
+        file, you can add and remove the repositories you want you can access it from <code>Create, add, and remove a repository</code>.</p>
+      <center><iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%7E%2524%2520sudo%2520themis%2520--install%2520%253Cpackage%253E"
+        style="width: 479px; height: 204px; border:0; transform: scale(1); overflow:hidden;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe></center>
+      <li><code>--uninstall, uninstall, --kaldır, kaldır, -u</code></li>
+      <p>With the remove argument, you can remove (delete) the files and directories installed on your system with themis, but the producers are not responsible for the damage to your system due to the gaps in the metadata files of the packages. Please stick to the package construction procedure and respect other people, always stay with free software.
+      <center><iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%7E%2524%2520sudo%2520themis%2520--uninstall%2520%253Cpackage%253E"
+        style="width: 454px; height: 204px; border:0; transform: scale(1); overflow:hidden;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe></center></p>
+      <li><code>--updateindex, updateindex, --indeksgüncelle, indexgüncelle, -up</code></li>
+      <p>themis works with catalog logic, it pulls information from the settings files saved in the file system beforehand, so you can access the information of the packages in the index you bought both fast and even when you are offline, 
+        the main index file where the repositories are hosted is specified as arrays of the repositories variable in the <code>/usr/share/themis/index.sh</code> file, It saves to dosyasının içerisinde <code>repositories</code> değişkeninin arrayları olarak belirtilir depolardan
+        çekilen doğrulanmış paket bilgileri ise <code>/usr/share/themis/repositories</code> dizinine kaydolur.  It saves to /usr/share/themis/repositories. It is enough to run this argument with sudo, there are no parameters or additional arguments at the moment, repository assignments can be made manually or with scripts that you have prepared or will prepare.</p>
+      <li><code>--list, list, -l</code></li>
+      <p>When the list argument is used plainly, it lists the names of the packages installed on your system. If you use <code>--repositories, repositories, repository, repo</code> as the second argument, you can see the package information in the repositories whose index you have updated before.</p>
+      <li><code>--info, info, --bilgi, bilgi, -i</code></li>
+      <p>You can see the information of the package(s) with the information argument, in order: <code>package, version, developer, description</code> LICENSE and README files, if any</p>
+      <center><iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%7E%2524%2520sudo%2520themis%2520--info%2520%253Cpackage%253E"
+        style="width: 412px; height: 204px; border:0; transform: scale(1); overflow:hidden;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe></center>
+      <li><code>--version, version, -v</code></li>
+      <p>You can see the version of themis we have used with the version argument and you can reach us from the link addresses..</p>
+      </ul>
+      </section>
+  <hr>
+  <section class="main-section" id="Headings/Paragraphs">
+    <header id="hp_header">Package preparation procedure</header>
+    <h2>How is the package prepared?</h2>
+    <p>First of all, open a metadata file named <code>CONTROL</code> in the main directory of your project and enter the <code>package, version, maintainer, description</code> variables in this file as mandatory information
+    The package variable is absolutely required and the package variable cannot contain characters such as "_" and " ", then you have to assign the dependencies, the dependencies are assigned as <code>systembase_depends=""</code> according to your operating system base
+    You can use existing dependencies such as <code>debian_depends, arch_depends, fedora_depends, pisi_depends, opensuse_depends</code>. You can also assign dependencies for python and ruby ​​modules using <code>python3_depends, ruby_depends</code> variables
+    Along with these, there are postinst scripts that come after the dependencies. After the dependencies are installed, you can specify a single script that will work according to the base of the system or on all systems, but do not forget that postinst scripts are not reversible, only during the installation phase.
+    they perform the same functions as dependencies and they have to be deleted from the system manually. Do not use postinst scripts unless necessary. -inst.sh, opensuse-inst.sh, post-inst.sh</code>
+    Now let's come to the most important <code>build() { ... }</code> function to be installed in this function, but with other sub-functions previously assigned to the build function, you can download files from the internet with the help of curl or wget in the build with gcc/cc You can compile files in subdirectories, but the main point here is
+    When moving any directory, you should use the <code>move "./source" "/target"</code> function instead of the mv command, so that the files installed on the system will be deleted in the reverse engineering process, while creating any directory or directories is <code>based." dir" "dir"</code> important point please do not use directories such as <code>/, /bin, /usr, /dev, /opt, /boot, /etc</code>
+    is that you don't define it directly because directly defined directories are deleted in reverse engineering process and if it is system directory this can cause major damage to your system.</p>    <h3>Example of CONTROL file:</h3>
+    <center><iframe
+      src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=package%253D%2522camilendin%2522%250Aversion%253D%25221.0.1%2522%250Amaintainer%253D%2522leery%2522%250Adescription%253D%2522can%2520s%25C4%25B1k%25C4%25B1nt%25C4%25B1s%25C4%25B1ndan%2520e%25C4%259Flence%2520ama%25C3%25A7l%25C4%25B1%2520yap%25C4%25B1lm%25C4%25B1%25C5%259F%2520bir%2520program%2520idir.%2522%250A%250Adebian_depends%253D%28%250A%2509%2522chafa%2522%250A%29%250A%250Aarch_depends%253D%28%250A%2509%2522chafa%2522%250A%29%250A%250Aopensuse%253D%28%250A%2509%2522chafa%2522%250A%29%250A%250Abuild%28%29%2520%257B%250A%2509basedir%2520%2522%252Fusr%252Fshare%252Fcamilendin%2522%250A%2509move%2520%2522.%252Fcamiresmi.jpeg%2522%2520%2522%252Fusr%252Fshare%252Fcamilendin%2522%250A%2509move%2520%2522.%252Fcamilendin.sh%2522%2520%2522%252Fusr%252Fbin%2522%250A%257D%250A%250A%2523%2520.%252Fcamilendin.sh%2520%2520.%252Fcamiresmi.jpeg%2520%2520.%252FCONTROL%2520%2520.%252FLICENSE%2520.%252FREADME.md"
+      style="width: 766px; height: 618px; border:0; transform: scale(1); overflow:hidden;"
+      sandbox="allow-scripts allow-same-origin">
+    </iframe></center>
+  </section>
+  <hr>
+  <section class="main-section" id="Links/Images">
+    <header>Create, add, and remove a repository</header>
+    <h2>Create a repository</h2>
+    <p>You can create the repository on any remote server. Open a file named <code>inde.sh</code> in the main directory where the files are located and create <code>maintainer, reponame, packages</code> variables in it. reponame is required as arrays inside packages as follows make an assignment <code>file.tar.gz_package_version</code>
+      However, remember that the first array, namely packages[0], should be the link where the index is located and the file.tar.gz files are handled as root. To explain this with an example, the only thing that should not be forgotten here is that the "_" character will be used as a separator, so "_" should not be in the names of the files.</p>
+    <center><iframe
+      src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=maintainer%253D%2522ByCh4n%2522%250Areponame%253D%2522themis-repo%2522%250A%250Apackages%253D%28%250A%2520%2520%2522https%253A%252F%252Fraw.githubusercontent.com%252FByCh4n-Group%252Fthemis-repo%252Fmain%2522%250A%2520%2520%2522bchacktool3.tar.gz_bchacktool_3.0.0%2522%250A%2520%2520%2522alvatadro.tar.gz_rzcracker_1.0.0%2522%250A%29%250A%250A%2523%2520https%253A%252F%252Fraw.githubusercontent.com%252FByCh4n-Group%252Fthemis-repo%252Fmain%252Findex.sh%250A%2523%2520https%253A%252F%252Fgithub.com%252FByCh4n-Group%252Fthemis-repo%252Fraw%252Fmain%252Fbchacktool3.tar.gz%250A%2523%2520https%253A%252F%252Fgithub.com%252FByCh4n-Group%252Fthemis-repo%252Fraw%252Fmain%252Falvatadro.tar.gz"
+      style="width: 774px; height: 402px; border:0; transform: scale(1); overflow:hidden;"
+      sandbox="allow-scripts allow-same-origin"></iframe>
+    </center>
+    <h2>Adding and removing a repository</h2>
+    <p>To add a repository, copy the link containing the <code>index.sh</code> file of your repository without removing the index.sh and put repositories in the <code>/usr/share/themis/index.sh</code> file in your file system. add it as a new array to the variable, in the same way in the removal process, remove the array with the link from the file <code>/usr/share/themis/index.sh</code> and <code>/usr/share/themis/repositories</code> Go to the directory and delete the metadata files of the relevant repository, don't forget to update the index after this process is finished</p>
+    <h3>Default file <code>/usr/share/themis/index.sh</code>:</h3>
+    <center><iframe
+      src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=repositories%253D%28%250A%2509%2522https%253A%252F%252Fraw.githubusercontent.com%252FByCh4n-Group%252Fthemis-repo%252Fmain%2522%250A%2509%2522https%253A%252F%252Fraw.githubusercontent.com%252FByCh4n-Group%252Fkraken-repo%252Fmain%2522%250A%29"
+      style="width: 732px; height: 258px; border:0; transform: scale(1); overflow:hidden;"
+      sandbox="allow-scripts allow-same-origin">
+    </iframe>
+  </center>
+  </section>
+  <hr>
+  <section class="main-section" id="Lists">
+    <header>Support</header>
+    <p>For now, there will be link addresses in this section.</p>
+    <a href="https://discord.com/invite/dQbvahVVG4">Winst</a>
+    <br>
+    <a href="https://discord.com/invite/Q4p9SQamrz">Windowser</a>
+    <p>Last Penguin#1453</p>
+  </section>
+  <hr>
+  <section class="main-section" id="Tables">
+    <header>Change log</header>
+    </div>
+    <p>19 Saturday, June 19</p>
+    <ul>
+      <p style="background-color:rgb(115, 255, 0);">+ added 'package' function as argument.</p>
+      <p style="background-color:rgb(115, 255, 0);">+ added 'localinstall' function as argument.</p>
+      <p style="background-color:rgb(115, 255, 0);">+ added 'install' function as argument.</p>
+      <p style="background-color:rgb(115, 255, 0);">+ Added script for 'bash_completion'.</p>
+    </ul>
+  </section>
+</main>
+</body>
