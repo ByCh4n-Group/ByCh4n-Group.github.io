@@ -1,0 +1,65 @@
+[
+  {
+    "id": "getting-started",
+    "title": {
+      "tr": "Başlangıç Rehberi",
+      "en": "Getting Started Guide"
+    },
+    "description": {
+      "tr": "ByCh4n Group ile başlamak için temel bilgiler",
+      "en": "Essential information for getting started with ByCh4n Group"
+    },
+    "category": {
+      "tr": "Başlangıç",
+      "en": "Getting Started"
+    },
+    "icon": "fas fa-play",
+    "order": 1,
+    "content": {
+      "tr": "# Başlangıç Rehberi\n\nBu rehber, ByCh4n Group topluluğuna yeni katılan üyeler için hazırlanmıştır.\n\n## Hoş Geldiniz!\n\nByCh4n Group'a hoş geldiniz! Burada birlikte öğrenme, geliştirme ve büyüme felsefesiyle hareket ediyoruz.\n\n## Topluluk Kuralları\n\n### 1. Saygılı Olun\n- Herkese saygı gösterin\n- Farklı görüşlere açık olun\n- Yapıcı eleştiri yapın\n\n### 2. Paylaşımcı Olun\n- Bilginizi paylaşın\n- Deneyimlerinizi aktarın\n- Sorularınızı sormaktan çekinmeyin\n\n### 3. Öğrenmeye Açık Olun\n- Yeni teknolojileri öğrenin\n- Projeler üzerinde işbirliği yapın\n- Sürekli gelişime odaklanın\n\n## Teknoloji Stack'imiz\n\n```javascript\nconst techStack = {\n  frontend: ['HTML', 'CSS', 'JavaScript', 'React'],\n  backend: ['Node.js', 'Python', 'Flask'],\n  database: ['PostgreSQL', 'MongoDB'],\n  devops: ['Docker', 'GitHub Actions'],\n  tools: ['VS Code', 'Git', 'Figma']\n};\n```",
+      "en": "# Getting Started Guide\n\nThis guide is prepared for new members joining the ByCh4n Group community.\n\n## Welcome!\n\nWelcome to ByCh4n Group! Here we operate with the philosophy of learning, developing and growing together.\n\n## Community Rules\n\n### 1. Be Respectful\n- Show respect to everyone\n- Be open to different opinions\n- Provide constructive criticism\n\n### 2. Be Sharing\n- Share your knowledge\n- Share your experiences\n- Don't hesitate to ask questions\n\n### 3. Be Open to Learning\n- Learn new technologies\n- Collaborate on projects\n- Focus on continuous improvement\n\n## Our Technology Stack\n\n```javascript\nconst techStack = {\n  frontend: ['HTML', 'CSS', 'JavaScript', 'React'],\n  backend: ['Node.js', 'Python', 'Flask'],\n  database: ['PostgreSQL', 'MongoDB'],\n  devops: ['Docker', 'GitHub Actions'],\n  tools: ['VS Code', 'Git', 'Figma']\n};\n```"
+    }
+  },
+  {
+    "id": "github-guide",
+    "title": {
+      "tr": "GitHub Kullanım Rehberi",
+      "en": "GitHub Usage Guide"
+    },
+    "description": {
+      "tr": "ByCh4n Group projelerinde GitHub kullanımı",
+      "en": "Using GitHub in ByCh4n Group projects"
+    },
+    "category": {
+      "tr": "Araçlar",
+      "en": "Tools"
+    },
+    "icon": "fab fa-github",
+    "order": 2,
+    "content": {
+      "tr": "# GitHub Kullanım Rehberi\n\nBu rehber, ByCh4n Group projelerinde GitHub'ı etkili bir şekilde kullanmanız için hazırlanmıştır.\n\n## Git Konfigürasyonu\n\n```bash\n# Kullanıcı adını ayarla\ngit config --global user.name \"Your Name\"\n\n# E-posta adresini ayarla\ngit config --global user.email \"your.email@example.com\"\n\n# Konfigürasyonu kontrol et\ngit config --list\n```\n\n## Temel Komutlar\n\n```bash\n# Repository clone etme\ngit clone https://github.com/ByCh4n-Group/repo.git\n\n# Yeni branch oluşturma\ngit checkout -b feature/new-feature\n\n# Değişiklikleri commit etme\ngit add .\ngit commit -m \"Add new feature\"\n\n# Push etme\ngit push origin feature/new-feature\n```\n\n## Python ile GitHub API\n\n```python\nimport requests\n\ndef get_repo_info(owner, repo):\n    url = f\"https://api.github.com/repos/{owner}/{repo}\"\n    response = requests.get(url)\n    return response.json()\n\n# Kullanım\nrepo_data = get_repo_info(\"ByCh4n-Group\", \"repository\")\nprint(f\"Repository: {repo_data['name']}\")\nprint(f\"Stars: {repo_data['stargazers_count']}\")\n```",
+      "en": "# GitHub Usage Guide\n\nThis guide is prepared for you to use GitHub effectively in ByCh4n Group projects.\n\n## Git Configuration\n\n```bash\n# Set username\ngit config --global user.name \"Your Name\"\n\n# Set email\ngit config --global user.email \"your.email@example.com\"\n\n# Check configuration\ngit config --list\n```\n\n## Basic Commands\n\n```bash\n# Clone repository\ngit clone https://github.com/ByCh4n-Group/repo.git\n\n# Create new branch\ngit checkout -b feature/new-feature\n\n# Commit changes\ngit add .\ngit commit -m \"Add new feature\"\n\n# Push\ngit push origin feature/new-feature\n```\n\n## GitHub API with Python\n\n```python\nimport requests\n\ndef get_repo_info(owner, repo):\n    url = f\"https://api.github.com/repos/{owner}/{repo}\"\n    response = requests.get(url)\n    return response.json()\n\n# Usage\nrepo_data = get_repo_info(\"ByCh4n-Group\", \"repository\")\nprint(f\"Repository: {repo_data['name']}\")\nprint(f\"Stars: {repo_data['stargazers_count']}\")\n```"
+    }
+  },
+  {
+    "id": "api-documentation",
+    "title": {
+      "tr": "API Dökümanları",
+      "en": "API Documentation"
+    },
+    "description": {
+      "tr": "REST API kullanımı ve örnekler",
+      "en": "REST API usage and examples"
+    },
+    "category": {
+      "tr": "API",
+      "en": "API"
+    },
+    "icon": "fas fa-code",
+    "order": 3,
+    "content": {
+      "tr": "# API Dökümanları\n\nByCh4n Group API'larının kullanım rehberi.\n\n## Authentication\n\n```javascript\n// API Key ile authentication\nconst headers = {\n  'Authorization': 'Bearer YOUR_API_KEY',\n  'Content-Type': 'application/json'\n};\n\nfetch('https://api.bych4n.group/v1/posts', {\n  method: 'GET',\n  headers: headers\n})\n.then(response => response.json())\n.then(data => console.log(data));\n```\n\n## Blog Posts API\n\n### GET /api/posts\n\n```json\n{\n  \"posts\": [\n    {\n      \"id\": 1,\n      \"title\": \"Sample Post\",\n      \"content\": \"Post content...\",\n      \"author\": \"ByCh4n Group\",\n      \"created_at\": \"2024-12-24T10:00:00Z\"\n    }\n  ],\n  \"total\": 1,\n  \"page\": 1,\n  \"per_page\": 10\n}\n```\n\n## React Örneği\n\n```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction BlogPosts() {\n  const [posts, setPosts] = useState([]);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    fetchPosts();\n  }, []);\n\n  const fetchPosts = async () => {\n    try {\n      const response = await fetch('/api/posts');\n      const data = await response.json();\n      setPosts(data.posts);\n      setLoading(false);\n    } catch (error) {\n      console.error('Error fetching posts:', error);\n      setLoading(false);\n    }\n  };\n\n  if (loading) {\n    return <div className=\"loading\">Loading...</div>;\n  }\n\n  return (\n    <div className=\"blog-posts\">\n      {posts.map(post => (\n        <article key={post.id} className=\"post-card\">\n          <h2>{post.title}</h2>\n          <p>{post.content}</p>\n          <span className=\"author\">By {post.author}</span>\n        </article>\n      ))}\n    </div>\n  );\n}\n\nexport default BlogPosts;\n```",
+      "en": "# API Documentation\n\nUsage guide for ByCh4n Group APIs.\n\n## Authentication\n\n```javascript\n// Authentication with API Key\nconst headers = {\n  'Authorization': 'Bearer YOUR_API_KEY',\n  'Content-Type': 'application/json'\n};\n\nfetch('https://api.bych4n.group/v1/posts', {\n  method: 'GET',\n  headers: headers\n})\n.then(response => response.json())\n.then(data => console.log(data));\n```\n\n## Blog Posts API\n\n### GET /api/posts\n\n```json\n{\n  \"posts\": [\n    {\n      \"id\": 1,\n      \"title\": \"Sample Post\",\n      \"content\": \"Post content...\",\n      \"author\": \"ByCh4n Group\",\n      \"created_at\": \"2024-12-24T10:00:00Z\"\n    }\n  ],\n  \"total\": 1,\n  \"page\": 1,\n  \"per_page\": 10\n}\n```\n\n## React Example\n\n```jsx\nimport React, { useState, useEffect } from 'react';\n\nfunction BlogPosts() {\n  const [posts, setPosts] = useState([]);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    fetchPosts();\n  }, []);\n\n  const fetchPosts = async () => {\n    try {\n      const response = await fetch('/api/posts');\n      const data = await response.json();\n      setPosts(data.posts);\n      setLoading(false);\n    } catch (error) {\n      console.error('Error fetching posts:', error);\n      setLoading(false);\n    }\n  };\n\n  if (loading) {\n    return <div className=\"loading\">Loading...</div>;\n  }\n\n  return (\n    <div className=\"blog-posts\">\n      {posts.map(post => (\n        <article key={post.id} className=\"post-card\">\n          <h2>{post.title}</h2>\n          <p>{post.content}</p>\n          <span className=\"author\">By {post.author}</span>\n        </article>\n      ))}\n    </div>\n  );\n}\n\nexport default BlogPosts;\n```"
+    }
+  }
+]
