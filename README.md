@@ -206,7 +206,6 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 - **Website**: [https://bych4n-group.github.io](https://bych4n-group.github.io)
 - **Discord**: [Sunucumuza katılın](#)
 - **GitHub**: [@ByCh4n-Group](https://github.com/ByCh4n-Group)
-- **E-posta**: info@bych4n.group
 
 ## 🙏 Teşekkürler
 
