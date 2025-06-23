@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<div class="docs-layout">
+    <div class="container">
+        <aside class="docs-sidebar">
+            <h3>{% if page.lang == 'en' %}Documentation{% else %}Dökümanlar{% endif %}</h3>
+            <nav class="docs-nav">
+                {% assign docs = site.docs | where: "lang", page.lang | default: "tr" %}
+                {% for doc in docs %}
+                <a href="{{ doc.url | relative_url }}" class="docs-nav-link {% if page.url == doc.url %}active{% endif %}">
+                    {{ doc.title }}
+                </a>
+                {% endfor %}
+            </nav>
+        </aside>
+
+        <main class="docs-content">
+            <article class="doc">
+                <header class="doc-header">
+                    <h1 class="doc-title">{{ page.title }}</h1>
+                    {% if page.description %}
+                    <p class="doc-description">{{ page.description }}</p>
+                    {% endif %}
+                    {% if page.last_modified_at %}
+                    <div class="doc-meta">
+                        <time class="doc-updated">
+                            {% if page.lang == 'en' %}Last updated:{% else %}Son güncelleme:{% endif %} 
+                            {{ page.last_modified_at | date: "%d %B %Y" }}
+                        </time>
+                    </div>
+                    {% endif %}
+                </header>
+
+                <div class="doc-content">
+                    {{ content }}
+                </div>
+
+                <footer class="doc-footer">
+                    <div class="doc-navigation">
+                        {% assign docs = site.docs | where: "lang", page.lang | default: "tr" %}
+                        {% for doc in docs %}
+                            {% if doc.url == page.url %}
+                                {% assign current_index = forloop.index %}
+                                {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if current_index > 1 %}
+                            {% assign prev_doc = docs[current_index | minus: 2] %}
+                            <div class="nav-previous">
+                                <span class="nav-label">
+                                    {% if page.lang == 'en' %}Previous{% else %}Önceki{% endif %}
+                                </span>
+                                <a href="{{ prev_doc.url | relative_url }}">{{ prev_doc.title }}</a>
+                            </div>
+                        {% endif %}
+                        
+                        {% if current_index < docs.size %}
+                            {% assign next_doc = docs[current_index] %}
+                            <div class="nav-next">
+                                <span class="nav-label">
+                                    {% if page.lang == 'en' %}Next{% else %}Sonraki{% endif %}
+                                </span>
+                                <a href="{{ next_doc.url | relative_url }}">{{ next_doc.title }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </footer>
+            </article>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+# Site settings
+title: "ByCh4n Group"
+description: "We Learn Together - Birlikte Öğreniyoruz"
+baseurl: ""
+url: "https://bych4n-group.github.io"
+
+# Author settings
+author:
+  name: "ByCh4n Group"
+  email: "info@bych4n.group"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Pagination
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Language settings for i18n
+languages: ["tr", "en"]
+default_language: "tr"
+exclude_from_localization: ["assets", "css", "js", "img"]
+
+# Navigation
+navigation:
+  tr:
+    - title: "Ana Sayfa"
+      url: "/"
+    - title: "Blog"
+      url: "/blog/"
+    - title: "Dökümanlar"
+      url: "/docs/"
+    - title: "Projeler"
+      url: "/projects/"
+    - title: "İletişim"
+      url: "/contact/"
+  en:
+    - title: "Home"
+      url: "/en/"
+    - title: "Blog"
+      url: "/en/blog/"
+    - title: "Documents"
+      url: "/en/docs/"
+    - title: "Projects"
+      url: "/en/projects/"
+    - title: "Contact"
+      url: "/en/contact/"
+
+# Theme
+theme_color: "#667eea"
+accent_color: "#f093fb"
+
+# SEO
+twitter_username: bych4n_group
+github_username: ByCh4n-Group
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - node_modules
+  - vendor
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "ByCh4n Group"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "doc"
+  - scope:
+      path: "_posts"
+    values:
+      lang: "tr"
+  - scope:
+      path: "en/_posts"
+    values:
+      lang: "en"
