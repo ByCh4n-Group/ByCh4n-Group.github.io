@@ -1,0 +1,65 @@
+[
+  {
+    "id": "jekyll-modern-websites",
+    "title": {
+      "tr": "Jekyll ile Modern Web Siteleri Oluşturma",
+      "en": "Building Modern Websites with Jekyll"
+    },
+    "excerpt": {
+      "tr": "Jekyll kullanarak modern, hızlı ve SEO dostu web siteleri nasıl oluşturulur? Bu yazıda Jekyll'ın temellerinden başlayarak GitHub Pages'te deployment'a kadar her şeyi öğreneceksiniz.",
+      "en": "Learn how to create modern, fast, and SEO-friendly websites using Jekyll. From Jekyll basics to deployment on GitHub Pages, we'll cover everything you need to know."
+    },
+    "content": {
+      "tr": "Jekyll, statik site oluşturmak için kullanılan güçlü bir araçtır. GitHub Pages tarafından desteklenen Jekyll ile hızlı, güvenli ve SEO dostu web siteleri oluşturabilirsiniz.\n\n## Jekyll Nedir?\n\nJekyll, Ruby programlama dili ile yazılmış bir statik site oluşturucusudur. Markdown dosyalarını HTML'e dönüştürerek modern web siteleri oluşturmanıza olanak tanır.\n\n### Jekyll'ın Avantajları\n\n- **Hız**: Statik dosyalar çok hızlı yüklenir\n- **Güvenlik**: Veritabanı olmadığı için güvenlik açıkları minimal\n- **SEO Dostu**: Temiz HTML çıktısı ve meta tag desteği\n- **GitHub Pages**: Ücretsiz hosting\n- **Markdown Desteği**: Kolay içerik yönetimi",
+      "en": "Jekyll is a powerful tool for creating static websites. With Jekyll, supported by GitHub Pages, you can build fast, secure, and SEO-friendly websites.\n\n## What is Jekyll?\n\nJekyll is a static site generator written in the Ruby programming language. It converts Markdown files to HTML, allowing you to create modern websites.\n\n### Advantages of Jekyll\n\n- **Speed**: Static files load very quickly\n- **Security**: Minimal security vulnerabilities due to no database\n- **SEO Friendly**: Clean HTML output and meta tag support\n- **GitHub Pages**: Free hosting\n- **Markdown Support**: Easy content management"
+    },
+    "date": "2024-12-24",
+    "author": "ByCh4n Group",
+    "categories": ["web-development", "jekyll"],
+    "tags": ["jekyll", "github-pages", "static-site"],
+    "image": "/assets/images/blog/jekyll-cover.jpg",
+    "featured": true
+  },
+  {
+    "id": "modern-css-responsive",
+    "title": {
+      "tr": "Modern CSS ile Responsive Tasarım",
+      "en": "Responsive Design with Modern CSS"
+    },
+    "excerpt": {
+      "tr": "CSS Grid, Flexbox ve modern CSS özelliklerini kullanarak responsive ve erişilebilir web tasarımları oluşturmayı öğrenin.",
+      "en": "Learn to create responsive and accessible web designs using CSS Grid, Flexbox, and modern CSS features."
+    },
+    "content": {
+      "tr": "Modern web geliştirmede responsive tasarım artık bir zorunluluk haline geldi. Bu yazıda CSS Grid, Flexbox ve diğer modern CSS özelliklerini kullanarak etkili responsive tasarımlar oluşturmayı ele alacağız.\n\n## CSS Grid vs Flexbox\n\n### CSS Grid - İki Boyutlu Layout\n\nCSS Grid, hem satır hem sütun bazında düzenleme yapmaya olanak tanır:\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  gap: 2rem;\n}\n```",
+      "en": "In modern web development, responsive design has become a necessity. In this article, we'll explore creating effective responsive designs using CSS Grid, Flexbox, and other modern CSS features.\n\n## CSS Grid vs Flexbox\n\n### CSS Grid - Two-Dimensional Layout\n\nCSS Grid allows arrangement on both row and column basis:\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  gap: 2rem;\n}\n```"
+    },
+    "date": "2024-12-20",
+    "author": "ByCh4n Group",
+    "categories": ["web-development", "css"],
+    "tags": ["css", "responsive", "flexbox", "grid"],
+    "image": "/assets/images/blog/css-cover.jpg",
+    "featured": false
+  },
+  {
+    "id": "javascript-async-programming",
+    "title": {
+      "tr": "JavaScript'te Asenkron Programlama",
+      "en": "Asynchronous Programming in JavaScript"
+    },
+    "excerpt": {
+      "tr": "Promise, async/await ve modern asenkron programlama tekniklerini öğrenerek daha iyi JavaScript uygulamaları geliştirin.",
+      "en": "Learn Promise, async/await and modern asynchronous programming techniques to develop better JavaScript applications."
+    },
+    "content": {
+      "tr": "JavaScript'te asenkron programlama, modern web uygulamalarının temel taşlarından biridir. Bu yazıda Promise'ler, async/await syntax'ı ve asenkron programlamanın best practice'lerini öğreneceksiniz.\n\n## Promise Nedir?\n\nPromise, gelecekte tamamlanacak bir işlemi temsil eden JavaScript objesidir:\n\n```javascript\nconst fetchData = () => {\n  return new Promise((resolve, reject) => {\n    // Asenkron işlem\n    setTimeout(() => {\n      resolve('Data loaded successfully!');\n    }, 2000);\n  });\n};\n```",
+      "en": "Asynchronous programming in JavaScript is one of the cornerstones of modern web applications. In this article, you'll learn about Promises, async/await syntax, and best practices for asynchronous programming.\n\n## What is a Promise?\n\nA Promise is a JavaScript object that represents an operation that will be completed in the future:\n\n```javascript\nconst fetchData = () => {\n  return new Promise((resolve, reject) => {\n    // Asynchronous operation\n    setTimeout(() => {\n      resolve('Data loaded successfully!');\n    }, 2000);\n  });\n};\n```"
+    },
+    "date": "2024-12-15",
+    "author": "ByCh4n Group",
+    "categories": ["javascript", "programming"],
+    "tags": ["javascript", "async", "promises", "async-await"],
+    "image": "/assets/images/blog/js-async-cover.jpg",
+    "featured": true
+  }
+]

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeler - ByCh4n Group</title>
+    <meta name="description" content="ByCh4n Group açık kaynak projeleri - Birlikte geliştirdiğimiz projeler ve katkıda bulunabileceğiniz çalışmalar">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    
+    <!-- Three.js for 3D animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="projects-page">
+    <!-- Particle Background -->
+    <div id="particle-canvas"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="loading-text">Projeler Yükleniyor...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="brand-link">
+                    <i class="fas fa-code brand-icon"></i>
+                    <span class="brand-text">ByCh4n Group</span>
+                </a>
+            </div>
+            
+            <div class="navbar-menu" id="navbar-menu">
+                <div class="navbar-nav">
+                    <a href="/" class="nav-link" id="nav-home">Ana Sayfa</a>
+                    <a href="/blog.html" class="nav-link" id="nav-blog">Blog</a>
+                    <a href="/docs.html" class="nav-link" id="nav-docs">Dökümanlar</a>
+                    <a href="/projects.html" class="nav-link active" id="nav-projects">Projeler</a>
+                    <a href="/contact.html" class="nav-link" id="nav-contact">İletişim</a>
+                    
+                    <!-- Language switcher -->
+                    <div class="language-switcher">
+                        <button class="language-btn" data-lang="tr">
+                            <i class="fas fa-flag"></i> TR
+                        </button>
+                        <button class="language-btn" data-lang="en">
+                            <i class="fas fa-flag"></i> EN
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navbar-toggle" id="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">
+                    <i class="fas fa-rocket"></i>
+                    <span>Projelerimiz</span>
+                </h1>
+                <p class="page-description">
+                    Birlikte geliştirdiğimiz açık kaynak projeler ve katkıda bulunabileceğiniz çalışmalar
+                </p>
+                
+                <!-- Project Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobil</button>
+                    <button class="filter-btn" data-filter="api">API</button>
+                    <button class="filter-btn" data-filter="tool">Araçlar</button>
+                    <button class="filter-btn" data-filter="library">Kütüphane</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Featured Projects -->
+            <section class="featured-projects">
+                <div class="section-header">
+                    <h2>Öne Çıkan Projeler</h2>
+                    <p>Topluluğumuzun en popüler ve aktif projeleri</p>
+                </div>
+                
+                <div class="featured-grid">
+                    <div class="featured-project">
+                        <div class="project-banner">
+                            <img src="/assets/images/projects/bych4n-site.jpg" alt="ByCh4n Group Website" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-status">
+                                    <span class="status-badge active">Aktif</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>ByCh4n Group Website</h3>
+                            <p>Modern, animasyonlu ve tamamen statik topluluk web sitesi. JSON-driven çoklu dil desteği ile.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">GSAP</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ByCh4n-Group/ByCh4n-Group.github.io" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </a>
+                                <a href="/" class="btn btn-outline">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- All Projects -->
+            <section class="all-projects">
+                <div class="section-header">
+                    <h2>Tüm Projeler</h2>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="projects-grid" id="projects-container">
+                    <!-- Example projects -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge active">Aktif</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Modern Web Template</h3>
+                            <p>Responsive ve modern web sitesi şablonu. SCSS, JavaScript ve modern CSS özellikleri ile.</p>
+                            <div class="project-stats">
+                                <span class="stat">
+                                    <i class="fas fa-star"></i>
+                                    25
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-code-branch"></i>
+                                    8
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    150
+                                </span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">SCSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="api">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge development">Geliştiriliyor</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>REST API Starter</h3>
+                            <p>Node.js ve Express ile hazır REST API şablonu. Authentication, validation ve dokumentasyon ile.</p>
+                            <div class="project-stats">
+                                <span class="stat">
+                                    <i class="fas fa-star"></i>
+                                    42
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-code-branch"></i>
+                                    15
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    320
+                                </span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i class="fas fa-book"></i>
+                                Docs
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="tool">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge planning">Planlama</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Code Formatter</h3>
+                            <p>Çoklu dil desteği olan kod formatlayıcı aracı. VS Code extension ve CLI versiyonu.</p>
+                            <div class="project-stats">
+                                <span class="stat">
+                                    <i class="fas fa-star"></i>
+                                    12
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-code-branch"></i>
+                                    3
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    85
+                                </span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">CLI</span>
+                                <span class="tech-tag">VS Code</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i class="fas fa-download"></i>
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="library">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge active">Aktif</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Animation Library</h3>
+                            <p>Hafif ve performanslı CSS/JS animasyon kütüphanesi. Modern web projeleri için optimize edilmiş.</p>
+                            <div class="project-stats">
+                                <span class="stat">
+                                    <i class="fas fa-star"></i>
+                                    68
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-code-branch"></i>
+                                    22
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    450
+                                </span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">GSAP</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contributing Section -->
+            <section class="contributing-section">
+                <div class="contributing-content">
+                    <h2>Katkıda Bulunmak İster misiniz?</h2>
+                    <p>Projelerimize katkıda bulunarak toplulukla birlikte büyüyebilirsiniz. Her seviyeden geliştirici için uygun görevler var!</p>
+                    
+                    <div class="contributing-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Projeyi Seç</h3>
+                                <p>İlginizi çeken bir projeyi seçin ve GitHub repository'sini ziyaret edin.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Issue'ları İncele</h3>
+                                <p>Mevcut issue'lara bakın veya yeni bir özellik/hata bildirimi oluşturun.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Pull Request Gönder</h3>
+                                <p>Değişikliklerinizi yapın ve pull request göndererek inceleme sürecini başlatın.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contributing-actions">
+                        <a href="https://github.com/ByCh4n-Group" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-github"></i>
+                            GitHub'ı Ziyaret Et
+                        </a>
+                        <a href="/docs.html" class="btn btn-outline">
+                            <i class="fas fa-book"></i>
+                            Katkı Rehberi
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-brand">ByCh4n Group</h3>
+                    <p class="footer-description">Birlikte Öğreniyoruz - We Learn Together</p>
+                    <div class="social-links">
+                        <a href="https://github.com/ByCh4n-Group" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/bych4n_group" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://discord.gg/bych4n" target="_blank" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-links-title">Hızlı Bağlantılar</h4>
+                    <ul>
+                        <li><a href="/" id="footer-home">Ana Sayfa</a></li>
+                        <li><a href="/blog.html" id="footer-blog">Blog</a></li>
+                        <li><a href="/docs.html" id="footer-docs">Dökümanlar</a></li>
+                        <li><a href="/projects.html" id="footer-projects">Projeler</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-latest-title">Popüler Projeler</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">ByCh4n Website</a></li>
+                        <li><a href="#" target="_blank">Animation Library</a></li>
+                        <li><a href="#" target="_blank">REST API Starter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 ByCh4n Group. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/projects.js"></script>
+</body>
+</html>

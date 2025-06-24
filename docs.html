@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dökümanlar - ByCh4n Group</title>
+    <meta name="description" content="ByCh4n Group Dökümanları - Başlangıç rehberleri, API dökümanları ve eğitim materyalleri">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    
+    <!-- Three.js for 3D animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="docs-page">
+    <!-- Particle Background -->
+    <div id="particle-canvas"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-book"></i>
+            </div>
+            <div class="loading-text">Dökümanlar Yükleniyor...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="brand-link">
+                    <i class="fas fa-code brand-icon"></i>
+                    <span class="brand-text">ByCh4n Group</span>
+                </a>
+            </div>
+            
+            <div class="navbar-menu" id="navbar-menu">
+                <div class="navbar-nav">
+                    <a href="/" class="nav-link" id="nav-home">Ana Sayfa</a>
+                    <a href="/blog.html" class="nav-link" id="nav-blog">Blog</a>
+                    <a href="/docs.html" class="nav-link active" id="nav-docs">Dökümanlar</a>
+                    <a href="/projects.html" class="nav-link" id="nav-projects">Projeler</a>
+                    <a href="/contact.html" class="nav-link" id="nav-contact">İletişim</a>
+                    
+                    <!-- Language switcher -->
+                    <div class="language-switcher">
+                        <button class="language-btn" data-lang="tr">
+                            <i class="fas fa-flag"></i> TR
+                        </button>
+                        <button class="language-btn" data-lang="en">
+                            <i class="fas fa-flag"></i> EN
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navbar-toggle" id="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">
+                    <i class="fas fa-book"></i>
+                    <span class="docs-title">Dökümanlar</span>
+                </h1>
+                <p class="page-description docs-description">
+                    Başlangıç rehberleri, API dökümanları ve detaylı eğitim materyalleri
+                </p>
+                
+                <!-- Documentation Search -->
+                <div class="docs-search">
+                    <div class="search-box">
+                        <input type="text" id="docs-search" placeholder="Dokümanlarda ara...">
+                        <button type="button" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="docs-layout">
+                <!-- Documentation Sidebar -->
+                <aside class="docs-sidebar">
+                    <div class="sidebar-header">
+                        <h3>Kategoriler</h3>
+                        <button class="sidebar-toggle" id="sidebar-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Table of Contents -->
+                    <nav class="docs-nav" id="docs-nav">
+                        <!-- Navigation will be dynamically loaded -->
+                    </nav>
+                </aside>
+                
+                <!-- Documentation Content -->
+                <div class="docs-content">
+                    <!-- Documentation Grid -->
+                    <div class="docs-grid" id="docs-container">
+                        <!-- Documentation items will be dynamically loaded here -->
+                    </div>
+                    
+                    <!-- Single Document View (hidden by default) -->
+                    <article class="doc-article" id="doc-article" style="display: none;">
+                        <div class="doc-header">
+                            <div class="doc-breadcrumb">
+                                <a href="/docs.html">Dökümanlar</a>
+                                <span class="breadcrumb-separator">/</span>
+                                <span class="current-doc-category"></span>
+                            </div>
+                            <h1 class="doc-title"></h1>
+                            <div class="doc-meta">
+                                <div class="doc-info">
+                                    <span class="doc-category"></span>
+                                    <span class="doc-update-date"></span>
+                                </div>
+                                <div class="doc-actions">
+                                    <button class="btn btn-sm btn-outline" id="copy-link-btn">
+                                        <i class="fas fa-link"></i>
+                                        Linki Kopyala
+                                    </button>
+                                    <button class="btn btn-sm btn-outline" id="print-doc-btn">
+                                        <i class="fas fa-print"></i>
+                                        Yazdır
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Document Content -->
+                        <div class="doc-content" id="doc-content-area">
+                            <!-- Content will be loaded here -->
+                        </div>
+                        
+                        <!-- Document Navigation -->
+                        <div class="doc-navigation">
+                            <div class="nav-link prev-doc" id="prev-doc">
+                                <div class="nav-direction">Önceki</div>
+                                <div class="nav-title"></div>
+                            </div>
+                            <div class="nav-link next-doc" id="next-doc">
+                                <div class="nav-direction">Sonraki</div>
+                                <div class="nav-title"></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-brand">ByCh4n Group</h3>
+                    <p class="footer-description">Birlikte Öğreniyoruz - We Learn Together</p>
+                    <div class="social-links">
+                        <a href="https://github.com/ByCh4n-Group" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/bych4n_group" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://discord.gg/bych4n" target="_blank" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-links-title">Hızlı Bağlantılar</h4>
+                    <ul>
+                        <li><a href="/" id="footer-home">Ana Sayfa</a></li>
+                        <li><a href="/blog.html" id="footer-blog">Blog</a></li>
+                        <li><a href="/docs.html" id="footer-docs">Dökümanlar</a></li>
+                        <li><a href="/projects.html" id="footer-projects">Projeler</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-latest-title">Popüler Dökümanlar</h4>
+                    <ul id="footer-popular-docs">
+                        <!-- Popular docs will be loaded here -->
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 ByCh4n Group. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/docs.js"></script>
+</body>
+</html>
