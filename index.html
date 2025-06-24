@@ -1,173 +1,261 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByCh4n Group - Birlikte Öğreniyoruz</title>
-    <meta name="description" content="Teknoloji dünyasında birlikte büyüyor, öğreniyor ve gelişiyoruz">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Prism.js for syntax highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link href="/assets/css/main.css" rel="stylesheet">
-    
-    <!-- Three.js for 3D animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <title>ByCh4n-Group | Independent Cybersecurity Community</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Particle Background -->
-    <div id="particle-canvas"></div>
+    <div class="matrix-bg"></div>
     
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loading-content">
-            <div class="loading-logo">
-                <i class="fas fa-code"></i>
-            </div>
-            <div class="loading-text">ByCh4n Group</div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="navbar-brand">
-                <a href="/" class="brand-link">
-                    <i class="fas fa-code brand-icon"></i>
-                    <span class="brand-text" data-i18n="site.title">ByCh4n Group</span>
-                </a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">[ByCh4n-Group]</span>
             </div>
-              <div class="navbar-menu" id="navbar-menu">
-                <div class="navbar-nav">
-                    <a href="/" class="nav-link active" id="nav-home">Ana Sayfa</a>
-                    <a href="/blog.html" class="nav-link" id="nav-blog">Blog</a>
-                    <a href="/docs.html" class="nav-link" id="nav-docs">Dökümanlar</a>
-                    <a href="/projects.html" class="nav-link" id="nav-projects">Projeler</a>
-                    <a href="/contact.html" class="nav-link" id="nav-contact">İletişim</a>
-                    
-                    <!-- Language switcher -->
-                    <div class="language-switcher">
-                        <button class="language-btn" data-lang="tr">
-                            <i class="fas fa-flag"></i> TR
-                        </button>
-                        <button class="language-btn" data-lang="en">
-                            <i class="fas fa-flag"></i> EN
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="navbar-toggle" id="navbar-toggle">
-                <i class="fas fa-bars"></i>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">~/home</a></li>
+                <li><a href="#about" class="nav-link">~/about</a></li>
+                <li><a href="#projects" class="nav-link">~/projects</a></li>
+                <li><a href="#blog" class="nav-link">~/blog</a></li>
+                <li><a href="#docs" class="nav-link">~/docs</a></li>
+                <li><a href="#social" class="nav-link">~/contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-background">
-            <canvas id="hero-canvas"></canvas>
-        </div>
-        <div class="container">            <div class="hero-content">
-                <h1 class="hero-title">ByCh4n Group</h1>
-                <p class="hero-subtitle">Birlikte Öğreniyoruz</p>
-                <p class="hero-description">
-                    Teknoloji dünyasında birlikte büyüyor, öğreniyor ve gelişiyoruz. Açık kaynak projeler geliştiriyor, bilgi paylaşıyor ve topluluk oluşturuyoruz.
-                </p>
-                <div class="hero-buttons">
-                    <a href="/blog.html" class="btn btn-primary">
-                        <span>Blog'u Keşfet</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="/docs.html" class="btn btn-secondary">
-                        <span>Dökümanlar</span>
-                        <i class="fas fa-book"></i>
-                    </a>
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="ascii-art">
+                <pre id="ascii-logo">
+██████╗ ██╗   ██╗ ██████╗██╗  ██╗██╗  ██╗███╗   ██╗      ██████╗ ██████╗  ██████╗ ██╗   ██╗██████╗ 
+██╔══██╗╚██╗ ██╔╝██╔════╝██║  ██║██║  ██║████╗  ██║     ██╔════╝ ██╔══██╗██╔═══██╗██║   ██║██╔══██╗
+██████╔╝ ╚████╔╝ ██║     ███████║███████║██╔██╗ ██║     ██║  ███╗██████╔╝██║   ██║██║   ██║██████╔╝
+██╔══██╗  ╚██╔╝  ██║     ██╔══██║╚════██║██║╚██╗██║     ██║   ██║██╔══██╗██║   ██║██║   ██║██╔═══╝ 
+██████╔╝   ██║   ╚██████╗██║  ██║     ██║██║ ╚████║     ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║     
+╚═════╝    ╚═╝    ╚═════╝╚═╝  ╚═╝     ╚═╝╚═╝  ╚═══╝      ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝     
+                                                                                                      
+           [ Independent Cybersecurity Community ]                                                   
+                </pre>
+            </div>
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn close"></span>
+                        <span class="btn minimize"></span>
+                        <span class="btn maximize"></span>
+                    </div>
+                    <div class="terminal-title">ByCh4n-Group@terminal:~$</div>
                 </div>
-                
-                <!-- Scroll indicator -->
-                <div class="scroll-indicator">
-                    <div class="scroll-text">Scroll</div>
-                    <div class="scroll-arrow">
-                        <i class="fas fa-chevron-down"></i>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="prompt">root@bych4n-group:~#</span>
+                        <span class="typewriter" id="typewriter-text"></span>
+                        <span class="cursor">|</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- Features Section -->
-    <section class="features" id="features">
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title features-title">Neler Yapıyoruz?</h2>
-            
-            <div class="features-grid">
-                <!-- Features will be dynamically loaded -->
+            <h2 class="section-title">&gt; whoami</h2>
+            <div class="about-content">
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <span>about.sh</span>
+                    </div>
+                    <div class="terminal-content">
+                        <p><span class="comment"># Independent Cybersecurity Community</span></p>
+                        <p><span class="var">MISSION</span>=<span class="string">"Advancing cybersecurity through open collaboration"</span></p>
+                        <p><span class="var">FOCUS</span>=<span class="string">"Pentesting, Security Research, Free Software"</span></p>
+                        <p><span class="var">PHILOSOPHY</span>=<span class="string">"Knowledge should be free and accessible"</span></p>
+                        <br>
+                        <p><span class="comment"># We are hackers, researchers, and advocates</span></p>
+                        <p><span class="comment"># Building tools and sharing knowledge</span></p>
+                        <p><span class="comment"># For a more secure digital world</span></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Projects Section -->
+    <section id="projects" class="section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="150">0</div>
-                    <div class="stat-label">Topluluk Üyesi</div>
+            <h2 class="section-title">&gt; ls -la ./projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Security Tools</h3>
+                        <span class="project-type">[TOOLS]</span>
+                    </div>
+                    <p>Custom penetration testing and security analysis tools developed by our community.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/ByCh4n-Group" target="_blank" class="btn-link">View on GitHub</a>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="50">0</div>
-                    <div class="stat-label">Açık Kaynak Proje</div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Research Papers</h3>
+                        <span class="project-type">[RESEARCH]</span>
+                    </div>
+                    <p>Security research papers and vulnerability disclosures from our team.</p>
+                    <div class="project-links">
+                        <a href="#docs" class="btn-link">Read Papers</a>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="100">0</div>
-                    <div class="stat-label">Blog Yazısı</div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Open Source</h3>
+                        <span class="project-type">[FOSS]</span>
+                    </div>
+                    <p>Free and open source software projects supporting the cybersecurity community.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/ByCh4n-Group" target="_blank" class="btn-link">Contribute</a>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="24">0</div>
-                    <div class="stat-label">Saat Destek</div>
-                </div>
-            </div>
-        </div>
-    </section>    <!-- Latest Posts Section -->
-    <section class="latest-posts" id="latest-posts">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Son Blog Yazıları</h2>
-                <a href="/blog.html" class="section-link">
-                    Tümünü Gör <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="blog-posts-grid">
-                <!-- Posts will be dynamically loaded -->
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Blog Section -->
+    <section id="blog" class="section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Topluluğumuza Katılın</h2>
-                <p>Birlikte öğrenme serüvenine başlamaya hazır mısınız?</p>
-                <div class="cta-actions">
-                    <a href="/contact.html" class="btn btn-primary">
-                        <span>İletişime Geç</span>
-                        <i class="fas fa-comments"></i>
-                    </a>
-                    <a href="https://github.com/ByCh4n-Group" class="btn btn-outline" target="_blank">
-                        <span>GitHub</span>
-                        <i class="fab fa-github"></i>
-                    </a>
+            <h2 class="section-title">&gt; cat ./blog/*</h2>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-date">2025-06-24</span>
+                        <span class="post-category">[PENTEST]</span>
+                    </div>
+                    <h3>Advanced Web Application Testing</h3>
+                    <p>Exploring modern techniques for comprehensive web application security assessments...</p>
+                    <a href="blog/advanced-web-testing.html" class="read-more">Read More &gt;&gt;</a>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-date">2025-06-20</span>
+                        <span class="post-category">[RESEARCH]</span>
+                    </div>
+                    <h3>Zero-Day Vulnerability Discovery</h3>
+                    <p>Our methodology for identifying and responsibly disclosing security vulnerabilities...</p>
+                    <a href="blog/zero-day-discovery.html" class="read-more">Read More &gt;&gt;</a>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-date">2025-06-15</span>
+                        <span class="post-category">[COMMUNITY]</span>
+                    </div>
+                    <h3>Building an Independent Security Community</h3>
+                    <p>The importance of independent cybersecurity communities in today's digital landscape...</p>
+                    <a href="blog/independent-community.html" class="read-more">Read More &gt;&gt;</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Docs Section -->
+    <section id="docs" class="section">
+        <div class="container">
+            <h2 class="section-title">&gt; tree ./documentation</h2>
+            <div class="docs-tree">
+                <div class="tree-item">
+                    <span class="tree-icon">📁</span>
+                    <span class="tree-name">Getting Started</span>
+                    <div class="tree-children">
+                        <div class="tree-item">
+                            <span class="tree-icon">📄</span>
+                            <a href="docs/setup-environment.html">Setup Environment</a>
+                        </div>
+                        <div class="tree-item">
+                            <span class="tree-icon">📄</span>
+                            <a href="docs/community-guidelines.html">Community Guidelines</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tree-item">
+                    <span class="tree-icon">📁</span>
+                    <span class="tree-name">Security Resources</span>
+                    <div class="tree-children">
+                        <div class="tree-item">
+                            <span class="tree-icon">📄</span>
+                            <a href="docs/pentest-methodology.html">Penetration Testing Methodology</a>
+                        </div>
+                        <div class="tree-item">
+                            <span class="tree-icon">📄</span>
+                            <a href="docs/vulnerability-disclosure.html">Vulnerability Disclosure</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tree-item">
+                    <span class="tree-icon">📁</span>
+                    <span class="tree-name">Tools & Scripts</span>
+                    <div class="tree-children">
+                        <div class="tree-item">
+                            <span class="tree-icon">📄</span>
+                            <a href="docs/custom-tools.html">Custom Security Tools</a>
+                        </div>
+                        <div class="tree-item">
+                            <span class="tree-icon">📄</span>
+                            <a href="docs/automation-scripts.html">Automation Scripts</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section id="social" class="section">
+        <div class="container">
+            <h2 class="section-title">&gt; ./connect.sh</h2>
+            <div class="social-grid">
+                <div class="social-card">
+                    <div class="social-icon">🐙</div>
+                    <h3>GitHub</h3>
+                    <p>Contribute to our open source projects</p>
+                    <a href="https://github.com/ByCh4n-Group" target="_blank" class="social-link">github.com/ByCh4n-Group</a>
+                </div>
+                
+                <div class="social-card">
+                    <div class="social-icon">💬</div>
+                    <h3>Discord</h3>
+                    <p>Join our community discussions</p>
+                    <a href="#" class="social-link">discord.gg/bych4n-group</a>
+                </div>
+                
+                <div class="social-card">
+                    <div class="social-icon">🐦</div>
+                    <h3>Twitter</h3>
+                    <p>Follow our latest updates</p>
+                    <a href="#" class="social-link">@ByCh4nGroup</a>
+                </div>
+                
+                <div class="social-card">
+                    <div class="social-icon">📧</div>
+                    <h3>Contact</h3>
+                    <p>Get in touch with our team</p>
+                    <a href="mailto:contact@bych4n-group.org" class="social-link">contact@bych4n-group.org</a>
                 </div>
             </div>
         </div>
@@ -176,50 +264,18 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">                <div class="footer-section">
-                    <h3 class="footer-brand">ByCh4n Group</h3>
-                    <p class="footer-description">Birlikte Öğreniyoruz - We Learn Together</p>
-                    <div class="social-links">
-                        <a href="https://github.com/ByCh4n-Group" target="_blank" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://twitter.com/bych4n_group" target="_blank" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://discord.gg/bych4n" target="_blank" title="Discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                    </div>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 ByCh4n-Group. Independent Cybersecurity Community.</p>
+                    <p>Free Software. Open Knowledge. Secure Future.</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-links-title">Hızlı Bağlantılar</h4>
-                    <ul>
-                        <li><a href="/" id="footer-home">Ana Sayfa</a></li>
-                        <li><a href="/blog.html" id="footer-blog">Blog</a></li>
-                        <li><a href="/docs.html" id="footer-docs">Dökümanlar</a></li>
-                        <li><a href="/projects.html" id="footer-projects">Projeler</a></li>
-                    </ul>
+                <div class="footer-right">
+                    <p>Built with ❤️ for the cybersecurity community</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-latest-title">Son Yazılar</h4>
-                    <ul id="footer-latest-posts">
-                        <!-- Latest posts will be loaded here -->
-                    </ul>
-                </div>
-            </div>
-              <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2024 ByCh4n Group. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="/assets/js/utils.js"></script>
-    <script src="/assets/js/animations.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
